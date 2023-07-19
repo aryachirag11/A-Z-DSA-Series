@@ -10,12 +10,18 @@ void bubbleSort(vector<int> &arr, int n)
 { // outer loop to iterate over the unsorted part
   for (int i = n - 1; i >= 0; i--)
   {
+    bool didSwap = false;
     // inner loop to push the maximum element to the last by ajacent swaps
     for (int j = 0; j <= i - 1; j++)
     {
       if (arr[j] > arr[j + 1])
+      {
         swap(arr[j], arr[j + 1]);
+        didSwap = true;
+      }
     }
+    if (didSwap == false)
+      break;
   }
 }
 
